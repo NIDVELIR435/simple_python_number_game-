@@ -10,10 +10,11 @@ shouldWriteIntMessage = 'I perceive only integer'
 # assigns restrict  max number for game
 maxNumber = input(defaultMessage)
 
-while maxNumber.isdigit():
+# only integers passed
+while not maxNumber.isdigit():
     maxNumber = input(defaultMessage)
-print('here')
 
+# ony integer bigger than 5 passed
 while int(maxNumber) <= 5:
     maxNumber = input(minCountMessage)
 
@@ -26,7 +27,7 @@ while answer != randomNumber:
         print('you lose')
         break
 
-    if type(answer) != 'int':
+    if not answer.isdigit():
         attempt += 1
         answer = input(shouldWriteIntMessage)
 
